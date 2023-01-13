@@ -6,12 +6,11 @@ const randomMotivation = document.querySelector("#random-motivation")
 const keyWords = document.querySelector("#key-words")
 const userSearch = document.querySelector("#user-search")
 const motivationalDiv = document.querySelector(".motivational-card")
-const note = document.querySelector('p');
+const note = document.querySelector('.note');
+const appendSearchWord = document.querySelector('.append-search')
 
 const form = document.querySelector("form");
 form.addEventListener("submit", quoteData)
-
-//function getSearchAPI()
 
 function quoteData(event) {
     event.preventDefault();
@@ -21,11 +20,11 @@ function quoteData(event) {
         
         .then((result) => {
             createMotivationalCard(result)
-            console.log(result)
+            
         })
-        // .catch((error) => {
-        //     createErrorMessage(error)
-        // })
+        .catch((error) => {
+            createErrorMessage(error)
+        })
 }
 
 function getRandomQuote(url) {
@@ -33,59 +32,69 @@ function getRandomQuote(url) {
         .then((response) => response.json())
         
         .then((results) => {
-            const p = document.createElement('p')
-            p.innerHTML = `<em>"${results.content}"</em> ~ <strong>${results.author}</strong>`;
-            randomMotivation.append(p); 
+            const quote = document.createElement('p')
+            quote.innerHTML = `<em>"${results.content}"</em> ~ <strong>${results.author}</strong>`;
+            randomMotivation.append(quote); 
         })
 }
 
 getRandomQuote(RANDOM_URL)
 
 function createMotivationalCard(quoteData) {
-   if (userSearch.value) {
-    getAuthor(quoteData);
-   } else {
-   getSpecificWords(quoteData)
-   }
+   
+    refreshPage()
+    if (userSearch.value) {
+        getAuthor(quoteData);
+    }else {
+        getSpecificWords(quoteData)
+    }
+    form.reset()
+   
 }
 
-
-function getAuthor(result) {
+function getAuthor(author) {
     const userInput = userSearch.value;;
     const formattedUserInput = userInput[0].toUpperCase() + userInput.slice(1).toLowerCase()
-    console.log(formattedUserInput)
-    const authorList = result.results.filter((result) => result.author.includes(formattedUserInput)) 
+    const authorList = author.results.filter((result) => result.author.includes(formattedUserInput)) 
     
     for (let i = 0; i < authorList.length; i++) {
         const authorContent = authorList[i].content;
         const authorName = authorList[i].author;
         randomMotivation.remove();
-        note.remove();
+        note.remove()
         const quoteContent = document.createElement("p");
         quoteContent.innerHTML = `<em>${authorContent}</em> <br><br> ~ <strong>${authorName}</strong><hr></hr> `
 
         motivationalDiv.append(quoteContent);
-        main.append(motivationalDiv);
-        form.reset();
+       
+        
     }
-    
+    form.reset();
     
 }
 
-
-function getSpecificWords(results) {
+function getSpecificWords(keyword) {
     const wordsInput = keyWords.value;
-    const keywordList = results.results.filter(results => results.content.includes(wordsInput))
+    const p = document.createElement('p');
+    p.innerHTML = `<em>${keyWords.value}</em>`;
+    appendSearchWord.append(p) 
+    const keywordList = keyword.results.filter((keyword) => keyword.content.includes(wordsInput))
+    console.log(keywordList);
     for (let j = 0; j < keywordList.length; j++) {
         const keywordContent = keywordList[j].content;
         const authorName = keywordList[j].author;
         randomMotivation.remove();
-        note.remove();
+        note.remove()
         const quoteContent = document.createElement("p");
-        quoteContent.innerHTML = `<em>${keywordContent}</em> <br> ~ <strong>${authorName}</strong><hr></hr> `
+        quoteContent.innerHTML = `<em>${keywordContent}</em>
+        <br> ~ <strong>${authorName}</strong><hr></hr> `;
+        motivationalDiv.append(quoteContent);      
+    }
+    form.reset();
+}
 
-        motivationalDiv.append(quoteContent);
-        main.append(motivationalDiv);
-        form.reset();
+function refreshPage() {
+    if(userSearch.value < 0) {
+        window.location.reload();
     }
 }
