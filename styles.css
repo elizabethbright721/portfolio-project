@@ -65,7 +65,9 @@ main {
    /* background-image: ;*/
 }
 main:hover {
-    background-color:#38a3a5
+    background-color:#38a3a5;
+    color: white;
+    
     
 }
 
