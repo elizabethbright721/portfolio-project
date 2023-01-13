@@ -42,7 +42,7 @@ getRandomQuote(RANDOM_URL)
 
 function createMotivationalCard(quoteData) {
    
-    refreshPage()
+    
     if (userSearch.value) {
         getAuthor(quoteData);
     }else {
@@ -76,10 +76,10 @@ function getAuthor(author) {
 function getSpecificWords(keyword) {
     const wordsInput = keyWords.value;
     const p = document.createElement('p');
-    p.innerHTML = `<em>${keyWords.value}</em>`;
+    p.innerHTML = `<em>${wordsInput}</em>`;
     appendSearchWord.append(p) 
-    const keywordList = keyword.results.filter((keyword) => keyword.content.includes(wordsInput))
-    console.log(keywordList);
+    const keywordList = keyword.results.filter((keyword) => keyword.content.includes(" " + wordsInput + " "))
+    console.log(keywordList)
     for (let j = 0; j < keywordList.length; j++) {
         const keywordContent = keywordList[j].content;
         const authorName = keywordList[j].author;
