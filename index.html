@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="index.js" defer ></script>
+    <script src="random.js" defer ></script>
     <title>Your Daily Motivation</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rowdies">
 </head>
@@ -34,8 +35,9 @@
                         <input id="user-search" name="user-search" type="text" placeholder="" >
                         <br>
                         <input type="submit" value="Search" />
+                        <button class="clear-search" type="button" onClick="window.location.reload()">Clear</button>
                     </form>
-                    <p class="append-search"></p>
+                    <ul class="append-search" hidden>Previous Search:</ul>
                 </div>
             <main class="wide">
                 <div class="motivational-card">

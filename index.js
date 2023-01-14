@@ -9,6 +9,7 @@ const motivationalDiv = document.querySelector(".motivational-card")
 const note = document.querySelector('.note');
 const appendSearchWord = document.querySelector('.append-search')
 
+
 const form = document.querySelector("form");
 form.addEventListener("submit", quoteData)
 
@@ -26,19 +27,6 @@ function quoteData(event) {
             createErrorMessage(error)
         })
 }
-
-function getRandomQuote(url) {
-    fetch(url) 
-        .then((response) => response.json())
-        
-        .then((results) => {
-            const quote = document.createElement('p')
-            quote.innerHTML = `<em>"${results.content}"</em> ~ <strong>${results.author}</strong>`;
-            randomMotivation.append(quote); 
-        })
-}
-
-getRandomQuote(RANDOM_URL)
 
 function createMotivationalCard(quoteData) {
    
@@ -74,27 +62,47 @@ function getAuthor(author) {
 }
 
 function getSpecificWords(keyword) {
-    const wordsInput = keyWords.value;
-    const p = document.createElement('p');
-    p.innerHTML = `<em>${wordsInput}</em>`;
-    appendSearchWord.append(p) 
+    // const arrayKeywords = [];
+    const wordsInput = keyWords.value;   
+    if (wordsInput !== "") {
+//     arrayKeywords.push(wordsInput);
+//     console.log(arrayKeywords)
+        const searchLi = document.createElement('li');
+        searchLi.innerHTML = `<em>${wordsInput}</em>`;
+        appendSearchWord.removeAttribute("hidden")
+        appendSearchWord.append(searchLi)   
+    }   
     const keywordList = keyword.results.filter((keyword) => keyword.content.includes(" " + wordsInput + " "))
-    console.log(keywordList)
-    for (let j = 0; j < keywordList.length; j++) {
-        const keywordContent = keywordList[j].content;
-        const authorName = keywordList[j].author;
-        randomMotivation.remove();
-        note.remove()
-        const quoteContent = document.createElement("p");
-        quoteContent.innerHTML = `<em>${keywordContent}</em>
-        <br> ~ <strong>${authorName}</strong><hr></hr> `;
-        motivationalDiv.append(quoteContent);      
-    }
+        for (let j = 0; j < keywordList.length; j++) {
+            const keywordContent = keywordList[j].content;
+            const authorName = keywordList[j].author;
+            randomMotivation.remove();
+            note.remove();
+            const quoteContent = document.createElement("p");
+            quoteContent.innerHTML = `<em>${keywordContent}</em>
+            <br> ~ <strong>${authorName}</strong><hr> `;
+              
+            motivationalDiv.append(quoteContent); 
+           
+   
+} 
+    // if (arrayKeywords.length > 5){
+    //     searchLi.firstChild.remove();
+    //     searchArray.shift();
+    //     }
+
     form.reset();
 }
 
-function refreshPage() {
-    if(userSearch.value < 0) {
-        window.location.reload();
+function createErrorMessage(error) {
+    if (userSearch === ""){
+    main.innerHTML = `<strong style="font-size: 20px;">You have entered an invalid entry. Please try again.</strong>`
     }
 }
+
+// function clearSearch(){
+//     clearButton.addEventListener('click', event => {
+//     const target = event.target;
+//     target.reload();
+//     }
+// }

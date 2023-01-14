@@ -60,4 +60,4 @@ This project will:
 
 -[ ] Use a CSS framework such as Simple.css or Bootstrap.
 
--[ ] Split your CSS or JavaScript into multiple files, with each file relating to a specific functionality. For example, create a new file called api.js that includes the JavaScript code that makes requests to your external API.
+-[x] Split your CSS or JavaScript into multiple files, with each file relating to a specific functionality. For example, create a new file called api.js that includes the JavaScript code that makes requests to your external API.
