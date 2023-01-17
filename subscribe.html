@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <title>Subscribe</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rowdies">
 </head>
 <body>
     <div class="container">
     <h1>Your Daily Motivation</h1>
-    <br>
-    <p class="subscribe">If you would like to receive daily quotes in your email for motivation, please sign up. </p>
-    <br>
+    <p class="subscribe">If you would like to receive daily quotes in your email for motivation, please subscribe. </p>
     
-    <form>
+    <form onsubmit="sendEmail(); reset(); return false;">
       <label class="form">
           <input id="title" name="visibility" type="radio" value="title" checked />Mr.
           <input id="title" name="visibility" type="radio" value="title" />Ms.
@@ -28,17 +26,15 @@
           <br><br>
       <label class="form">Email</label>
           <input id="email" name="email" type="email" placeholder="Email" required/>
-      
-
-     
-      <input type="submit" value="Subscribe" />
+      <button type="submit">Subscribe</button>
     </form>
     <br>
     <div class="row">
-        <div class="footer"> 
+    <div class="footer"> 
             <p><a href="index.html">Home<a></p>
-           
-        </div>
+    </div></div>
 </div>
 </div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
 </html>
