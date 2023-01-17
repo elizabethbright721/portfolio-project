@@ -4,7 +4,13 @@
 
 *Describe using the requirements as a guide.*
 
+This application allow you to search quotes for daily motivation.  
 
+You can search either a "keyword" such as "win", "success", "love", "hope", etc., which will produce a list of motivational quotes by various authors.  
+
+You can also search an author for motivational quotes.
+
+https://daily-motivational-quotes.netlify.app/
 
 This project will:
 
