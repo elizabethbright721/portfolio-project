@@ -3,7 +3,7 @@
 <p>By Elizabeth Bright
 <br>
 
-**Purpose of application**
+## Purpose of application
 <p>This application allow you to search quotes for daily motivation.  
 <br>
 <p>You can search either a "keyword" such as "win", "success", "love", "hope", etc., which will produce a list of motivational quotes by various authors or you can search quotes by author (i.e., Michael Jordan).  
@@ -18,7 +18,7 @@
 Passcode: W8R!UiUB
 <br>
 
-## This project was completed with the following requirements:
+### This project was completed with the following requirements:
 <br>
 
 **Have a deployed front-end application.**
