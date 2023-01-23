@@ -10,6 +10,15 @@ const appendSearchWord = document.querySelector('.append-search')
 const arrayImagesElement = document.querySelector("arrayImages")
 const searchArray = [];
 const form = document.querySelector("form");
+const imgArray = [
+    '../images/1.jpg',
+    '../images/2.jpg',
+    '../images/3.jpg',
+    '../images/4.jpg',
+    '../images/5.jpg',
+    '../images/6.jpg',
+];
+
 form.addEventListener("submit", quoteData)
 
 function quoteData(event) {
@@ -40,30 +49,44 @@ function getAuthor(author) {
     const userInput = userSearch.value;;
     const formattedUserInput = userInput[0].toUpperCase() + userInput.slice(1).toLowerCase()
     const authorList = author.results.filter((result) => result.author.includes(formattedUserInput)) 
-    for (let i = 0; i < authorList.length; i++) {
-        const authorContent = authorList[i].content;
-        const authorName = authorList[i].author;
+    authorList.forEach(author => {
+        motivationalDiv.textContent = " ";
+        imgArray.forEach(image => {       
+        document.getElementById('wide').style.backgroundImage = `url(${image})`;
+        }); 
+        const authorContent = author.content;
+        const authorName = author.author;
         randomMotivation.remove();
         note.remove()
         const quoteContent = document.createElement("p");
-        quoteContent.innerHTML = `<em>${authorContent}</em> <br><br> ~ <strong>${authorName}</strong><hr></hr> `
+        quoteContent.innerHTML = `<em>${authorContent}</em> <br><br> ~ <strong>${authorName}</strong> `
+       
         motivationalDiv.append(quoteContent);
-    }
+        
+    })
     form.reset();
 }
 
 function getSpecificWords(keyword) {
     const wordsInput = keyWords.value;   
     if (wordsInput !== ""){
+        motivationalDiv.textContent = " ";
         const searchLi = document.createElement('li');
         searchLi.innerHTML = `<em>${wordsInput}</em>`;
         appendSearchWord.removeAttribute("hidden")
         appendSearchWord.append(searchLi) 
         searchArray.push(wordsInput);
-        if (searchArray.length > 2) {
+        if (searchArray.length > 5) {
             searchLi.firstChild.remove();
             searchArray.unshift();
         }
+    if (keyword !== wordsInput) {
+        const section = document.createElement("p");
+        section.innerHTML = `That keyword doesn't exist.  Click clear and try another one.
+    `;
+        main.append(section)
+        }
+        
     }
    
     const keywordList = keyword.results.filter((keyword) => keyword.content.includes(" " + wordsInput + " "))
@@ -74,42 +97,31 @@ function getSpecificWords(keyword) {
             note.remove();
             const quoteContent = document.createElement("p");
             quoteContent.innerHTML = `<em>${keywordContent}</em>
-            <br> ~ <strong>${authorName}</strong><hr> `;
+            <br><br> ~ <strong>${authorName}</strong><hr> `;
             motivationalDiv.append(quoteContent); 
     } 
     form.reset();
 }
 
 function createErrorMessage(error) {
-    if (typeof (keyWords.value) !== "") {
-    main.innerHTML = '<strong style="font-size: 18px;">Please enter a keyword or author.</strong>';
-    }
-}
+    const section = document.createElement("section");
+    section.innerHTML = `
+      <p class="message">${error}</p>
+    `;
+    main.append(section);
+   }
 
-// function sendEmail() {
-//     Email.send({
-//         Host : "smtp.gmail.com",
-//         Username : "elizabethbright721@gmail.com",
-//         Password : "password",
-//         To : 'elizabethbright@gmail721.com',
-//         From : document.getElementById("email").value,
-//         Subject : "New Subscriber",
-//         Body : "This is a new subscriber from Your Daily Motivation <br> + document.getElementbyId("name").value + <br> Email: ""
-//     }).then(
-//       message => alert(message)
-//     );
+
+
+// function randomImages() {
+//     //let images = [];
+//     const img = document.createElement("img")
+//     img.src = "/..images/"
+
+//     let imagesLength = images.length;
+//     let randomNumber = Math.random();
+//     randomNumber = randomNumber*imagesLength;
+//     randomNumber = Math.floor(randomNumber);
+//     let choosenImage = images[randomNumber];
+//     background.src = choosenImage;
 // }
-
-
-function randomImages() {
-    //let images = [];
-    const img = document.createElement("img")
-    img.src = "/..images/"
-
-    let imagesLength = images.length;
-    let randomNumber = Math.random();
-    randomNumber = randomNumber*imagesLength;
-    randomNumber = Math.floor(randomNumber);
-    let choosenImage = images[randomNumber];
-    background.src = choosenImage;
-}
