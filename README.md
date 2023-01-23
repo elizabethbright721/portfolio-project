@@ -1,10 +1,10 @@
 # portfolio-project
 <br>
-#Front-end Portfolio Project 
+# Front-end Portfolio Project 
 <br>
 By Elizabeth Bright
 
-**Purpoe of application**
+**Purpose of application**
 <p>This application allow you to search quotes for daily motivation.  
 <br>
 <p>You can search either a "keyword" such as "win", "success", "love", "hope", etc., which will produce a list of motivational quotes by various authors or you can search quotes by author (i.e., Michael Jordan).  
@@ -22,21 +22,24 @@ Passcode: W8R!UiUB
 <br>
 <p>**Have a deployed front-end application.**
 <br>
-<br>-[x] Allow for user interaction through button clicks and form inputs.
-
-<br>-[x] Make requests to an external API.
-
-<br>-[x] Have a theme and unique product design.
+-[x] Allow for user interaction through button clicks and form inputs.
+<br>
+-[x] Make requests to an external API.
+<br>
+-[x] Have a theme and unique product design.
 <br>
 
-<p>**Overall requirements**
+**Overall requirements**
 <br>
-<p>-[x] Create a GitHub repository and upload your code to it.
-<br>-[x] Your GitHub repository should have a readme.md file with setup instructions for your application.
-<br>-[x] Your project should have a coherent theme and narrative.
-<br>-[x] Your project should be deployed to the web.
+-[x] Create a GitHub repository and upload your code to it.
+<br>
+-[x] Your GitHub repository should have a readme.md file with setup instructions for your application.
+<br>
+-[x] Your project should have a coherent theme and narrative.
+<br>
+-[x] Your project should be deployed to the web.
 
-<p>**Front-end visual requirements**
+**Front-end visual requirements**
 <br>
 -[x] Your application must have at least two .html files that are connected.
 <br>
@@ -52,7 +55,8 @@ Passcode: W8R!UiUB
 <br>
 -[x] All of your pages must have some visual changes that occur when the screen is a different size.
 <br>
-<p>**Front-end interactivity requirements**
+
+**Front-end interactivity requirements**
 <br>
 -[x] On page load, an external API request must be made. Upon receiving a successful response, something visual on the page should change.
 <br>
@@ -62,11 +66,13 @@ Passcode: W8R!UiUB
 <br>
 -[x] Based on a button click or form submission, an external API request must be made. Upon receiving a successful response, something visual on the page should change.
 <br>
-<p>**External APIs:**
+
+**External APIs:**
 <p>- api.quotable.io/quotes
 <p>- api.quotable.io/random
 <br>
-<p>**Additional features or tasks**
+
+**Additional features or tasks**
 <br>
 -[x] Add a button or icon to the error that displays when a form is incorrectly filled out. When this button or icon is clicked, the error is removed from the page.
 <br>
