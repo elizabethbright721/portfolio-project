@@ -1,8 +1,7 @@
-# portfolio-project
+# Front End Portfolio-project
+
+<p>By Elizabeth Bright
 <br>
-# Front-end Portfolio Project 
-<br>
-By Elizabeth Bright
 
 **Purpose of application**
 <p>This application allow you to search quotes for daily motivation.  
@@ -18,9 +17,11 @@ By Elizabeth Bright
 <p>https://us06web.zoom.us/rec/share/p8qrgR0tz9vrtLE9FmhcYWe_jlcVuGVm90eRRZYUYDIl-g4ayihPnAevHxoYZ9m3.TTh1YmOEw3XpQ-Zm
 Passcode: W8R!UiUB
 <br>
-<p>This project was completed with the following requirements:
+
+## This project was completed with the following requirements:
 <br>
-<p>**Have a deployed front-end application.**
+
+**Have a deployed front-end application.**
 <br>
 -[x] Allow for user interaction through button clicks and form inputs.
 <br>
