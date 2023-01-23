@@ -1,18 +1,22 @@
 # portfolio-project
-#Front-end Portfolio Project
+#Front-end Portfolio Project 
+By Elizabeth Bright
 
-
-*Describe using the requirements as a guide.*
-
+**Purpoe of application**
 This application allow you to search quotes for daily motivation.  
 
-You can search either a "keyword" such as "win", "success", "love", "hope", etc., which will produce a list of motivational quotes by various authors.  
+You can search either a "keyword" such as "win", "success", "love", "hope", etc., which will produce a list of motivational quotes by various authors or you can search quotes by author (i.e., Michael Jordan).  
 
-You can also search an author for motivational quotes.
+The second page allows the user to subscribe to receiving a motivational quote in their email everyday by completing the form.  
 
-https://daily-motivational-quotes.netlify.app/
+Please check out my application here:  https://daily-motivational-quotes.netlify.app/
 
-This project will:
+Please review my video presenting my application and explaining it in more details via the link below:
+
+https://us06web.zoom.us/rec/share/p8qrgR0tz9vrtLE9FmhcYWe_jlcVuGVm90eRRZYUYDIl-g4ayihPnAevHxoYZ9m3.TTh1YmOEw3XpQ-Zm
+Passcode: W8R!UiUB
+
+This project was completed with the following requirements:
 
 **Have a deployed front-end application.**
 -[x] Allow for user interaction through button clicks and form inputs.
@@ -38,7 +42,7 @@ This project will:
 
 -[x] You must use an HTML form on at least one of your pages.
 
--[ ] All of your pages must have some visual changes that occur when the screen is a different size.
+-[x] All of your pages must have some visual changes that occur when the screen is a different size.
 
 **Front-end interactivity requirements**
 
@@ -56,14 +60,8 @@ This project will:
 
 **Additional features or tasks**
 
--[ ] Add a button or icon to the error that displays when a form is incorrectly filled out. When this button or icon is clicked, the error is removed from the page.
-
--[ ] Use CSS transitions to add effects to your page.
+-[x] Add a button or icon to the error that displays when a form is incorrectly filled out. When this button or icon is clicked, the error is removed from the page.
 
 -[x] Incorporate fonts from Google Fonts (Rowdie, )
-
--[ ] Store some information locally through localStorage. This information should affect what is shown on the page when the page is reloaded.
-
--[ ] Use a CSS framework such as Simple.css or Bootstrap.
 
 -[x] Split your CSS or JavaScript into multiple files, with each file relating to a specific functionality. For example, create a new file called api.js that includes the JavaScript code that makes requests to your external API.
