@@ -80,13 +80,7 @@ function getSpecificWords(keyword) {
             searchLi.firstChild.remove();
             searchArray.unshift();
         }
-    if (keyword !== wordsInput) {
-        const section = document.createElement("p");
-        section.innerHTML = `That keyword doesn't exist.  Click clear and try another one.
-    `;
-        main.append(section)
-        }
-        
+       
     }
    
     const keywordList = keyword.results.filter((keyword) => keyword.content.includes(" " + wordsInput + " "))
@@ -99,7 +93,12 @@ function getSpecificWords(keyword) {
             quoteContent.innerHTML = `<em>${keywordContent}</em>
             <br><br> ~ <strong>${authorName}</strong><hr> `;
             motivationalDiv.append(quoteContent); 
-    } 
+    }  if (wordsInput === null) {
+        const section = document.createElement("p");
+        section.innerHTML = `That keyword doesn't exist.  Click clear and try another one.
+    `;
+        main.append(section)
+        }
     form.reset();
 }
 
